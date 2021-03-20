@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "AgeAndGenderPrinter";
+
+package printer;
+
+service Printer 
+{
+	rpc PrintAgeAndGender (PrintRequest) returns (PrintReply);
+}
+
+message PrintRequest 
+{
+	string name = 1;
+	string cnp = 2;
+}
+
+message PrintReply 
+{
+	string messageName = 1;
+	string messageGender = 2;
+	string messageAge = 3;
+}
